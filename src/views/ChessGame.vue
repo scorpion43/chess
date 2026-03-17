@@ -1,5 +1,8 @@
 <template>
-  <div class="game">
-    <p>This is a boilerplate for game</p>
+  <div class="chess-game">
+    <ChessGameConfiguration />
   </div>
 </template>
+<script setup lang="ts">
+import ChessGameConfiguration from '@/components/ChessGameConfiguration.vue'
+</script>
