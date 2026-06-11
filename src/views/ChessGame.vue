@@ -4,5 +4,5 @@
   </div>
 </template>
 <script setup lang="ts">
-import ChessGameConfiguration from '@/components/ChessGameConfiguration.vue'
+import ChessGameConfiguration from '@/components/CGConfiguration.vue'
 </script>

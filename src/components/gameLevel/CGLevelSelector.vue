@@ -1,20 +1,18 @@
 <template>
   <div class="level-selector">
     <ul class="level-selector__level-list">
-      <li
-        class="level-selector__level-item"
-        v-for="(item, index) in levels"
+      <CGEloItem
+        v-for="(elo, index) in levels"
+        :elo="elo"
         :key="`level-${index}`"
-        @click="chooseLevel(index)"
-      >
-        <p class="level-selector__label">{{ index + 1 }}</p>
-        <p class="level-selector__elo">elo: {{ item }}</p>
-      </li>
+        @click="chooseLevel(elo)"
+      />
     </ul>
   </div>
 </template>
 <script setup lang="ts">
 import { ref, type Ref } from 'vue'
+import CGEloItem from './CGEloItem.vue'
 
 const emit = defineEmits(['chooseLevel'])
 
@@ -29,17 +27,15 @@ const chooseLevel = (levelIndex: number) => {
 <style lang="scss">
 .level-selector {
   &__level-list {
-    display: flex;
+    padding: 0;
+    width: fit-content;
+    margin: 0 auto;
     list-style-type: none;
-    gap: 4px;
-  }
-  &__level-item {
-    border: 1px solid black;
-    border-radius: 50%;
-    padding: 20px 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    gap: 5px;
+    display: grid;
+    grid-template-columns: 130px 130px 130px;
+    grid-template-rows: 130px 130px 130px;
+    place-items: center;
   }
 }
 </style>

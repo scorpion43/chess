@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import ChessGameNavigation from '@/components/ChessGameNavigation.vue'
+import ChessGameNavigation from '@/components/CGNavigation.vue'
 </script>
 
 <template>

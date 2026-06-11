@@ -1,8 +1,8 @@
 <template>
   <div class="chess-game__configuration">
-    <ChessGameLevelSelector />
+    <CGLevelSelector />
   </div>
 </template>
 <script setup lang="ts">
-import ChessGameLevelSelector from './ChessGameLevelSelector.vue'
+import CGLevelSelector from './gameLevel/CGLevelSelector.vue'
 </script>
