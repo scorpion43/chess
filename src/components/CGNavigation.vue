@@ -21,3 +21,4 @@ const navLinks: NavLink[] = [
   },
 ]
 </script>
+<style lang="scss"></style>

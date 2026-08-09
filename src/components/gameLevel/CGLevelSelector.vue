@@ -1,11 +1,13 @@
 <template>
   <div class="level-selector">
+    <p class="level-selector__elo-title">Choose your elo level:</p>
     <ul class="level-selector__level-list">
       <CGEloItem
         v-for="(elo, index) in levels"
         :elo="elo"
+        :chosen="index === choosenEloIndex"
         :key="`level-${index}`"
-        @click="chooseLevel(elo)"
+        @click="chooseElo(index)"
       />
     </ul>
   </div>
@@ -17,11 +19,11 @@ import CGEloItem from './CGEloItem.vue'
 const emit = defineEmits(['chooseLevel'])
 
 const levels: number[] = [1100, 1200, 1300, 1400, 1500, 1600]
-const choosenLevelIndex: Ref<number> = ref(0)
+const choosenEloIndex: Ref<number> = ref(0)
 
-const chooseLevel = (levelIndex: number) => {
-  choosenLevelIndex.value = levelIndex
-  emit('chooseLevel', levels[choosenLevelIndex.value])
+const chooseElo = (eloIndex: number) => {
+  choosenEloIndex.value = eloIndex
+  emit('chooseLevel', levels[eloIndex])
 }
 </script>
 <style lang="scss">
@@ -36,6 +38,9 @@ const chooseLevel = (levelIndex: number) => {
     grid-template-columns: 130px 130px 130px;
     grid-template-rows: 130px 130px 130px;
     place-items: center;
+  }
+  &__elo-title {
+    text-align: center;
   }
 }
 </style>
